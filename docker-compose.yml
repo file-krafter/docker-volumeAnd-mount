@@ -4,8 +4,8 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./host-logs:/logs            # Bind mount for logs
-      - h2data:/data                 # Named volume for database
+      - ./host-logs:/logs
+      - h2data:/data
     container_name: springboot-app
 
 volumes:
