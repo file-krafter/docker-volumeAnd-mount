@@ -7,7 +7,9 @@ RUN mvn clean package
 
 
 # State 2: run
-FROM gcr.io/distroless/java21-debian12:nonroot
+#FROM gcr.io/distroless/java21-debian12:nonroot
+# commented this coz distroless dont have sh so create dir failing
+FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=builder /app/target/*.war app.war
 
