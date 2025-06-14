@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./host-logs:/logs            # Bind mount for logs
+      - h2data:/data                 # Named volume for database
+    container_name: springboot-app
+
+volumes:
+  h2data:
